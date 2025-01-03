@@ -1,10 +1,12 @@
 #!/bin/bash
 #!/bin/bash
 USER=$(id -u)
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 |cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -46,5 +48,5 @@ then
     mysql_secure_installation --set-root-pass ExpenseApp@1
     VALIDATE $? "Setting root password"
 else
-    echo "password is already set...........$Y SKIPPING $N"
+    echo -e "password is already set...........$Y SKIPPING $N"
 fi
