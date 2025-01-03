@@ -39,7 +39,7 @@ VALIDATE $? "service enable is"
 systemctl start mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "service start is"
 
-mysql -h mysql.devdom.fun -u root -pExpenseApp@1 -e "show databases";
+mysql -h mysql.devdom.fun -u root -pExpenseApp@1 -e "show databases" &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then 
     echo "mysql root password not set" &>>$LOG_FILE_NAME
@@ -47,4 +47,3 @@ then
     VALIDATE $? "Setting root password"
 else
     ehco "password is already set...........$Y SKIPPING"
-
