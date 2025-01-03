@@ -47,3 +47,4 @@ then
     VALIDATE $? "Setting root password"
 else
     ehco "password is already set...........$Y SKIPPING"
+fi
