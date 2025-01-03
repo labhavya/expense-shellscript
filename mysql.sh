@@ -46,5 +46,5 @@ then
     mysql_secure_installation --set-root-pass ExpenseApp@1
     VALIDATE $? "Setting root password"
 else
-    echo "password is already set...........$Y SKIPPING"
+    echo "password is already set...........$Y SKIPPING $N"
 fi
