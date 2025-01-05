@@ -29,6 +29,7 @@ if [ $1 -eq 0 ]
 else
    echo -e "$2.......$R failed $N"
    exit 1
+fi
 }
 
 CHECK_ROOT
