@@ -31,6 +31,7 @@ VALIDATE()
         exit 1
     fi
 }
+echo "script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 CHECK_ROOT
 
 dnf module disable nodejs -y &>>$LOG_FILE_NAME
