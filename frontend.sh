@@ -1,5 +1,6 @@
 #!/bin/bash
 
+USERID= $(id -u)
 #set colours
 R="\e[31m"
 G="\e[32m"
@@ -14,9 +15,8 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 CHECK_ROOT(){
-  USERID= $(id -u)
    if [ $USERID -ne 0 ]
-        then
+    then
         echo "user doesn't have root access"
         exit 1
     fi
