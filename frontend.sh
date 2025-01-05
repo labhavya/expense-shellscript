@@ -7,7 +7,7 @@ Y="\e[33m"
 N="\e[0m"
 
 #setup log folder:
-mkdir -p shellscript-logs
+mkdir -p /var/log/shellscript-logs
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 |cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -35,7 +35,7 @@ fi
 CHECK_ROOT
 
 #install nginx
-dnf install nginx -y &>>$LOG_FILE_NAME
+dnf install nginx -y  &>>$LOG_FILE_NAME
 VALIDATE $? "installing nginx"
 
 #enable nginx
