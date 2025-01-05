@@ -14,7 +14,7 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 CHECK_ROOT(){
-   user -id 
+   id -u
    if [ $? -ne 0 ]
         then
         echo "user doesn't have root access"
